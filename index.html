@@ -2,61 +2,36 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>San Valentín 💖</title>
+<title>DISEÑO DE RECIPIENTES A PRESIÓN</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
     /* 📱 VERSIÓN CELULAR */
+/* ===== MOBILE FIX REAL ===== */
 @media (max-width: 768px) {
 
-    /* Ajuste general */
-    body {
-        flex-direction: column;
-        padding-top: 20px;
+    /* OCULTAMOS gifs flotantes */
+    .decor-layer {
+        display: none;
     }
 
-    /* GIFS más pequeños */
-    .decor {
-        width: 130px;
+    /* CONTENEDOR DE GIFS ARRIBA */
+    .mobile-gifs {
+        position: absolute;
+        top: 20px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        z-index: 10;
     }
 
-    /* Reubicamos TODOS los gifs arriba */
-    .left-top,
-    .right-top {
-        top: 10px;
+    .mobile-gifs img {
+        width: 110px;
     }
 
-    .left-top {
-        left: 10px;
-    }
-
-    .right-top {
-        right: 10px;
-    }
-
-    .left-middle,
-    .right-middle,
-    .left-bottom,
-    .right-bottom {
-        display: none; /* ocultamos exceso */
-    }
-
-    /* La tarjeta baja un poco */
+    /* BAJAMOS LA TARJETA */
     .card {
-        margin-top: 140px;
-    }
-
-    /* Texto más compacto */
-    h1 {
-        font-size: 22px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
-    button {
-        font-size: 15px;
+        margin-top: 160px;
     }
 }
 
@@ -164,33 +139,6 @@ button {
 @keyframes beat {
     0%,100% { transform: scale(1); }
     50% { transform: scale(1.2); }
-}
-/* ===== MOBILE FIX REAL ===== */
-@media (max-width: 768px) {
-
-    /* OCULTAMOS gifs flotantes */
-    .decor-layer {
-        display: none;
-    }
-
-    /* CONTENEDOR DE GIFS ARRIBA */
-    .mobile-gifs {
-        position: absolute;
-        top: 20px;
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        z-index: 10;
-    }
-
-    .mobile-gifs img {
-        width: 110px;
-    }
-
-    /* BAJAMOS LA TARJETA */
-    .card {
-        margin-top: 160px;
-    }
 }
 
 </style>
