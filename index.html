@@ -118,30 +118,31 @@ button {
 
 <!-- GIFS ALREDEDOR -->
 <div class="decor-layer">
-    <img class="decor left-top" src="gif2.gif">
-    <img class="decor left-middle" src="gif4.gif">
-    <img class="decor left-bottom" src="gif6.gif">
+    <img class="decor left-top" src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif2.gif">
+    <img class="decor left-middle" src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif4.gif">
+    <img class="decor left-bottom" src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif6.gif">
 
-    <img class="decor right-top" src="gif3.gif">
-    <img class="decor right-middle" src="gif5.gif">
-    <img class="decor right-bottom" src="gif7.gif">
+    <img class="decor right-top" src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif3.gif">
+    <img class="decor right-middle" src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif5.gif">
+    <img class="decor right-bottom" src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif7.gif">
 </div>
 
 <!-- TARJETA -->
 <div class="card">
-    <h1>💘 San Valentín 💘</h1>
-    <p>¿Aceptas esta invitación especial?</p>
+    <h1>💘 ¡MI AMA PRECIOSA! 💘</h1>
+    <p>¿Quieres ser mi San Valentin?</p>
 
     <div class="heart">❤️</div>
 
     <div class="details">
-        📅 14 de febrero <br>
-        ⏰ 7:00 PM
+        📅 Sábado 14 de febrero <br>
+        ⏰ Desde las 3pm <br>
+        PD: Te quiero mucho mi osita 💕
     </div>
 
     <div class="buttons">
-        <button id="yesBtn">Sí 💕</button>
-        <button id="noBtn">No 😶</button>
+        <button id="yesBtn">Siiiii</button>
+        <button id="noBtn">No...</button>
     </div>
 
     <p class="teddy-text">SOY YOOO, SOY TODOS ESTOS OSOOOS 🧸💖</p>
@@ -160,37 +161,44 @@ const messages = [
     "¿…Segura??",
     "¿SEGURA???",
     "¿SEGURÍSIMA???",
-    "💖 DI QUE SÍ 💖"
+    "💖 DI QUE SIIIII 💖"
 ];
 
 const originalParent = noBtn.parentElement;
 const originalNext = noBtn.nextSibling;
 
 noBtn.addEventListener("click", () => {
-    if (moveCount < 10) {
-        moveCount++;
-        noBtn.style.position = "absolute";
-        document.body.appendChild(noBtn);
 
-        const maxX = window.innerWidth - noBtn.offsetWidth;
-        const maxY = window.innerHeight - noBtn.offsetHeight;
+    /* 🕹️ FASE 1: el NO huye 6 veces */
+    if (moveCount < 6) {
+        moveCount++;
+
+        noBtn.style.position = "fixed";
+        noBtn.style.zIndex = "9999";
+
+        const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+        const maxY = window.innerHeight - noBtn.offsetHeight - 20;
 
         noBtn.style.left = `${Math.random() * maxX}px`;
-        noBtn.style.top = `${Math.random() * maxY}px`;
+        noBtn.style.top  = `${Math.random() * maxY}px`;
 
-        if (moveCount === 10) {
+        // En el último escape, regresa a su lugar
+        if (moveCount === 6) {
             setTimeout(() => {
                 noBtn.style.position = "relative";
                 noBtn.style.left = "0";
-                noBtn.style.top = "0";
+                noBtn.style.top  = "0";
+                noBtn.style.zIndex = "3";
                 originalParent.insertBefore(noBtn, originalNext);
-            }, 600);
+            }, 500);
         }
         return;
     }
 
+    /* 💖 FASE 2: el SÍ empieza a dominar */
     if (attempts < messages.length) {
         attempts++;
+
         yesBtn.textContent = messages[attempts - 1];
         yesBtn.style.transform = `scale(${1 + attempts * 0.15})`;
 
@@ -200,6 +208,7 @@ noBtn.addEventListener("click", () => {
         }
     }
 });
+
 
 yesBtn.addEventListener("click", () => {
     document.body.innerHTML = `
@@ -213,9 +222,9 @@ yesBtn.addEventListener("click", () => {
             color:white;
             font-family:'Segoe UI',sans-serif;
             text-align:center;">
-            <h1 style="color:white;">💖 Sabía que dirías que sí 💖<br><br>
-            Nos vemos pronto 😌</h1>
-            <img src="gif9.gif" style="width:200px;margin-top:20px;">
+            <h1 style="color:white;">💖 Ayyyy yo sabía que no te negarias jiji 💖<br><br>
+            Nos vemos este sábadoooo <3 </h1>
+            <img src="https://raw.githubusercontent.com/trpesantes/SANVALENTIN/main/gif9.gif" style="width:200px;margin-top:20px;">
         </div>
     `;
 });
@@ -223,4 +232,3 @@ yesBtn.addEventListener("click", () => {
 
 </body>
 </html>
-
